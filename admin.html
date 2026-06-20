@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Admin Modelos</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-dark text-white">
+
+<div class="container mt-5">
+
+<h2>Panel Admin - Crear Modelo</h2>
+
+<form id="formModelo" class="mt-4">
+
+  <input class="form-control mb-2" placeholder="Nombre" id="nombre" required>
+
+  <input class="form-control mb-2" placeholder="Edad" id="edad">
+
+  <input class="form-control mb-2" placeholder="Altura" id="altura">
+
+  <input class="form-control mb-2" placeholder="Medidas" id="medidas">
+
+  <input class="form-control mb-2" placeholder="Cabello" id="cabello">
+
+  <input class="form-control mb-2" placeholder="Ojos" id="ojos">
+
+  <input class="form-control mb-2" placeholder="URL imagen" id="foto">
+
+  <button class="btn btn-primary w-100">Guardar modelo</button>
+
+</form>
+
+</div>
+
+<script>
+document.getElementById("formModelo").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  const models = JSON.parse(localStorage.getItem("models")) || [];
+
+  const nuevo = {
+    id: Date.now(),
+    nombre: document.getElementById("nombre").value,
+    edad: document.getElementById("edad").value,
+    altura: document.getElementById("altura").value,
+    medidas: document.getElementById("medidas").value,
+    cabello: document.getElementById("cabello").value,
+    ojos: document.getElementById("ojos").value,
+    foto: document.getElementById("foto").value,
+    esNueva: true
+  };
+
+  models.push(nuevo);
+
+  localStorage.setItem("models", JSON.stringify(models));
+
+  alert("Modelo creada");
+
+  document.getElementById("formModelo").reset();
+});
+</script>
+
+</body>
+</html>

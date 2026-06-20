@@ -93,7 +93,7 @@
 
         <div class="card-body">
 
-          <h2 class="card-title">Melani</h2>
+          <!-- <h2 class="card-title">Melani</h2>
 
           <hr>
 
@@ -101,9 +101,18 @@
           <p><strong>Altura:</strong> 1.70m</p>
           <p><strong>Medidas:</strong> 90 - 60 - 90</p>
           <p><strong>Cabello:</strong> Castaño</p>
-          <p><strong>Ojos:</strong> Verdes</p>
+          <p><strong>Ojos:</strong> Verdes</p> -->
+
+          <h2 class="card-title" id="nombre"></h2>
+          <hr>
+          <p><strong>Edad:</strong> <span id="edad"></span></p>
+          <p><strong>Altura:</strong> <span id="altura"></span></p>
+          <p><strong>Medidas:</strong> <span id="medidas"></span></p>
+          <p><strong>Cabello:</strong> <span id="cabello"></span></p>
+          <p><strong>Ojos:</strong> <span id="ojos"></span></p>
 
         </div>
+        
 
       </div>
 
@@ -299,7 +308,7 @@
         <div class="container-fluid p-5">
             <div class="row">
                 <div class="col text-white">
-                    <p><a href="index.html" title="Bellas Córdoba">Bellascba.com</a> Guía de las mejores escorts independientes de Córdoba. Todas las Publicaciones de Servicios son de independientes. Bellascba NO posee relación ni vinculación laboral con los avisadores. Sólo publicamos Fotografías y textos a expresa voluntad de nuestros avisadores. Bellascba es un medio Visual Publicitario. Sitio sólo para mayores, en publicación y usuarios visitantes.<br>
+                    <p><a href="index.html" title="Bellas Córdoba">Bellascba.com</a> Guía de las mejores modelos independientes de Córdoba. Todas las Publicaciones de Servicios son de independientes. Bellascba NO posee relación ni vinculación laboral con los avisadores. Sólo publicamos Fotografías y textos a expresa voluntad de nuestros avisadores. Bellascba es un medio Visual Publicitario. Sitio sólo para mayores, en publicación y usuarios visitantes.<br>
                     <br>
                     © 2026 Bellascba.com. Todos los derechos reservados.</p>
                 </div>
@@ -330,6 +339,18 @@
 
   });
 
+</script>
+<script>
+const perfil = JSON.parse(localStorage.getItem("melani"));
+
+if (perfil) {
+  document.getElementById("nombre").innerText = perfil.nombre;
+  document.getElementById("edad").innerText = perfil.edad;
+  document.getElementById("altura").innerText = perfil.altura;
+  document.getElementById("medidas").innerText = perfil.medidas;
+  document.getElementById("cabello").innerText = perfil.cabello;
+  document.getElementById("ojos").innerText = perfil.ojos;
+}
 </script>
 
 </body>
